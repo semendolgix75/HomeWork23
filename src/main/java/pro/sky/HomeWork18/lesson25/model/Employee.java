@@ -40,7 +40,6 @@ public class Employee {
         Employee employee = (Employee) object;
         return Objects.equals(firstName, employee.firstName) && Objects.equals(lastName, employee.lastName) && Objects.equals(departmentNumber, employee.departmentNumber) && Objects.equals(salary, employee.salary);
     }
-
     @Override
     public String toString() {
         return "Employee{" +

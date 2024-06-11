@@ -1,5 +1,4 @@
 package pro.sky.HomeWork18.lesson25.service;
-
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 import pro.sky.HomeWork18.lesson25.exception.EmployeeAlreadyAddedException;
@@ -14,7 +13,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public EmployeeServiceImpl() {
         this.employees = new HashMap<>();
-
 
     }
 
@@ -35,7 +33,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         add("Haritonov ", "Nikolay", 3, 69000);
         add("Davankov ", "Vlad", 4, 71000);
         add("Slutskiy", "Leonid", 5, 76000);
-        System.out.println(employees);
     }
     @Override
     public Employee add(String firstName, String lastName, Integer departmentNumber, Integer salary){

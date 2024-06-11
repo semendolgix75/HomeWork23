@@ -11,6 +11,7 @@ public interface EmployeeService {
     Employee remove(String firstName, String lastName, Integer departmentNumber, Integer salary);
     Employee find(String firstName, String lastName, Integer departmentNumber, Integer salary);
 
+
     Collection<Employee> findAll();
 }
 

@@ -9,6 +9,7 @@ import pro.sky.HomeWork18.lesson25.model.Employee;
 
 import java.util.*;
 
+import static org.apache.commons.lang3.StringUtils.capitalize;
 import static org.apache.commons.lang3.StringUtils.isAlpha;
 
 @Service
@@ -22,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @PostConstruct
     private void init() {
-        add("Vasilyev", "Vasiliy", 1, 68000);
+        add("vasilyev", "Vasiliy", 1, 68000);
         add("Dmitriev", "Dmitriy", 2, 92000);
         add("Borisov", "Boris", 3, 90000);
         add("Vladimirov", "Vladimir", 4, 80000);
@@ -42,6 +43,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public Employee add(String firstName, String lastName, Integer departmentNumber, Integer salary) {
         checkTextData(firstName, lastName);
+
         Employee employee = new Employee(firstName, lastName, departmentNumber, salary);
         if (employees.containsKey(employee.getFullName())) {
             throw new EmployeeAlreadyAddedException();
@@ -51,7 +53,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     private void checkTextData(String firstName, String lastName) {
-        String full=firstName+lastName;
         if (!(isAlpha(firstName + lastName))) {
             throw new EmployeeEntryError("Ошибка ввода данных работника");
         }

@@ -2,6 +2,8 @@ package pro.sky.HomeWork18.lesson25.model;
 
 import java.util.Objects;
 
+import static org.apache.commons.lang3.StringUtils.capitalize;
+
 public class Employee {
     private final String firstName;
     private final String lastName;
@@ -10,8 +12,8 @@ public class Employee {
 
 
     public Employee(String firstName, String lastName, Integer departmentNumber, Integer salary) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = capitalize(firstName);;
+        this.lastName = capitalize(lastName);
         this.departmentNumber = departmentNumber;
         this.salary = salary;
     }

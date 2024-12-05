@@ -7,6 +7,8 @@ import pro.sky.HomeWork18.lesson25.model.Employee;
 import pro.sky.HomeWork18.lesson25.service.EmployeeService;
 import java.util.Collection;
 
+import static org.apache.commons.lang3.StringUtils.isAlpha;
+
 
 @RestController
 @RequestMapping("/employee")
@@ -18,8 +20,12 @@ public class EmployeeController {
     }
     @GetMapping("/add")
     public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName,@RequestParam Integer departmentNumber,@RequestParam Integer salary) {
+
         return service.add(firstName, lastName,departmentNumber,salary);
     }
+
+
+
     @GetMapping("/remove")
     public Employee removeEmployee(@RequestParam String firstName, @RequestParam String lastName,@RequestParam Integer departmentNumber,@RequestParam Integer salary) {
         return service.remove(firstName, lastName,departmentNumber,salary);
